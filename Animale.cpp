@@ -5,13 +5,14 @@
 #include "Animale.h"
 #include <iostream>
 #include <string>
-Animale::Animale(const std::string &specie, const std::string &nume, const std::string &sex, int varsta, int id) : specie(specie),
-                                                                                                    nume(nume),
-                                                                                                    sex(sex),
+#include <utility>
+Animale::Animale(std::string specie, std::string nume, std::string sex, int varsta, int id) : specie(std::move(specie)),
+                                                                                                    nume(std::move(nume)),
+                                                                                                    sex(std::move(sex)),
                                                                                                     varsta(varsta),
                                                                                                     id(id) {}
 
-Animale::Animale() {}
+Animale::Animale() = default;
 
 Animale::Animale(const Animale &rhs) {
     specie=rhs.specie;
@@ -41,24 +42,24 @@ int Animale::getId() const {
     return id;
 }
 
-void Animale::setSpecie(const std::string &specie) {
-    Animale::specie = specie;
+void Animale::setSpecie(const std::string &_specie) {
+    Animale::specie = _specie;
 }
 
-void Animale::setNume(const std::string &nume) {
-    Animale::nume = nume;
+void Animale::setNume(const std::string &_nume) {
+    Animale::nume = _nume;
 }
 
-void Animale::setSex(const std::string &sex) {
-    Animale::sex = sex;
+void Animale::setSex(const std::string &_sex) {
+    Animale::sex = _sex;
 }
 
-void Animale::setVarsta(int varsta) {
-    Animale::varsta = varsta;
+void Animale::setVarsta(int _varsta) {
+    Animale::varsta = _varsta;
 }
 
-void Animale::setId(int id) {
-    Animale::id = id;
+void Animale::setId(int _id) {
+    Animale::id = _id;
 }
 
 std::ostream &operator<<(std::ostream &os, const Animale &animale) {
@@ -66,7 +67,7 @@ std::ostream &operator<<(std::ostream &os, const Animale &animale) {
     os << "Numele animalului este: " << animale.nume <<std::endl;
     os << "Sexul animalului este: " << animale.sex <<std::endl;
     os << "Varsta animalului este: "<< animale.varsta <<std::endl;
-    os << "Id-ul animalului este: " << animale.id<<std::endl;;
+    os << "Id-ul animalului este: " << animale.id<<std::endl;
     return os;
 }
 
@@ -84,14 +85,7 @@ std::istream &operator>>(std::istream &is, Animale &animale) {
     return is;
 }
 
-Animale &Animale::operator=(const Animale &rhs) {
-    specie=rhs.specie;
-    nume=rhs.nume;
-    sex=rhs.sex;
-    varsta=rhs.varsta;
-    id=rhs.id;
-    return *this;
-}
+Animale &Animale::operator=(const Animale &rhs) = default;
 
 void Animale::afisare() const {
     std::cout<<"Specia animalului este: "<<specie<<std::endl;
@@ -101,9 +95,7 @@ void Animale::afisare() const {
     std::cout<<"Id-ul animalului este: "<<id<<std::endl;
 }
 
-Animale::~Animale() {
-
-}
+Animale::~Animale() = default;
 
 
 

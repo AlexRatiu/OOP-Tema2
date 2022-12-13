@@ -5,7 +5,7 @@
 #include "Caine.h"
 #include "Animale.h"
 Caine::Caine(const std::string &specie, const std::string &nume, const std::string &sex, int varsta, int id,
-             const std::string _rasa):Animale("caine", nume, sex, varsta, id) {
+             const std::string& _rasa):Animale(specie, nume, sex, varsta, id) {
     rasa=_rasa;
 
 }
@@ -29,8 +29,8 @@ const std::string &Caine::getRasa() const {
 
 }
 
-void Caine::setRasa(const std::string &rasa) {
-    Caine::rasa = rasa;
+void Caine::setRasa(const std::string &_rasa) {
+    Caine::rasa = _rasa;
 }
 
 std::ostream &operator<<(std::ostream &os, const Caine &caine) {

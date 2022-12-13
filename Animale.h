@@ -12,34 +12,34 @@ protected:
     std::string specie;
     std::string nume;
     std::string sex;
-    int varsta;
-    int id;
+    int varsta{};
+    int id{};
 public:
-    Animale(const std::string &specie, const std::string &nume, const std::string &sex, int varsta, int id);
+    Animale(std::string specie, std::string nume, std::string sex, int varsta, int id);
 
     Animale();
 
     Animale(const Animale& rhs);
 
-    const std::string &getSpecie() const;
+    [[nodiscard]] const std::string &getSpecie() const;
 
-    const std::string &getNume() const;
+    [[nodiscard]] const std::string &getNume() const;
 
-    const std::string &getSex() const;
+    [[nodiscard]] const std::string &getSex() const;
 
-    int getVarsta() const;
+    [[nodiscard]] int getVarsta() const;
 
-    int getId() const;
+    [[nodiscard]] int getId() const;
 
-    void setSpecie(const std::string &specie);
+    void setSpecie(const std::string &_specie);
 
-    void setNume(const std::string &nume);
+    void setNume(const std::string &_nume);
 
-    void setSex(const std::string &sex);
+    void setSex(const std::string &_sex);
 
-    void setVarsta(int varsta);
+    void setVarsta(int _varsta);
 
-    void setId(int id);
+    void setId(int _id);
 
     friend std::ostream &operator<<(std::ostream &os, const Animale &animale);
 

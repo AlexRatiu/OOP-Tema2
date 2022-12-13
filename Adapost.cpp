@@ -4,7 +4,7 @@
 
 #include "Adapost.h"
 #include <iostream>
-#include <string.h>
+#include <cstring>
 
 Adapost::Adapost(int nrAnimale) : nr_animale(nrAnimale) {}
 
@@ -25,12 +25,12 @@ std::ostream &operator<<(std::ostream &os, const Adapost &adapost) {
     return os;
 }
 
-void Adapost::add_animal(std::shared_ptr<Animale> nou) {
+void Adapost::add_animal(const std::shared_ptr<Animale>& nou) {
     lista_animale.push_back(nou);
     nr_animale++;
 }
 
-void Adapost::cauta_animal(std::string specie) {
+void Adapost::cauta_animal(const std::string& specie) {
      for(int i=0; i<nr_animale; i++) {
          //std::cout<<specie<<std::endl<<lista_animale[i]->getSpecie()<<std::endl;
          if (strcmp(lista_animale[i]->getSpecie().c_str(), specie.c_str()) == 0){

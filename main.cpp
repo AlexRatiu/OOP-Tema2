@@ -3,7 +3,7 @@
 #include "Animale.h"
 #include "Caine.h"
 #include "Adapost.h"
-#include "Meniu.h"
+
 #include "memory"
 
 int main() {
@@ -20,14 +20,21 @@ int main() {
     ALEX4ALL->add_animal(Tudor);
     ALEX4ALL->add_animal(Simona);
 
-    std::unique_ptr<Meniu> mn = std::make_unique<Meniu>(-1);
+
     int cheie=-1;
-    Meniu menu(-1);
+
     while(cheie!=0)
     {
-        menu.prezentare();
+            std::cout << "Pentru a adauga un animal apasa tasta 1" << std::endl;
+            std::cout << "Pentru a cauta un animal apasa tasta 2" << std::endl;
+            std::cout << "Pentru a elimina un animal apasa tasta 3" << std::endl;
+            std::cout << "Pentru a afisa toate animalele apasa tasta 4" << std::endl;
+            std::cout << "Pentru a iesi din program apasa tasta 0" << std::endl;
+
         std::cin>>cheie;
         switch (cheie) {
+            default :
+                break;
             case 1 : {
                 ALEX4ALL->add_animal(Cristina);
                 break;

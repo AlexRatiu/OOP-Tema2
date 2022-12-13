@@ -15,7 +15,7 @@ class Adapost {
     std::vector<std::shared_ptr<Animale>>lista_animale={};
 
 public:
-    Adapost(int nrAnimale);
+    explicit Adapost(int nrAnimale);
 
     Adapost();
 
@@ -25,9 +25,9 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Adapost &adapost);
 
-    void add_animal(std::shared_ptr<Animale> nou);
+    void add_animal(const std::shared_ptr<Animale>& nou);
 
-    void cauta_animal(std::string specie);
+    void cauta_animal(const std::string& specie);
 
     void sterge_animal(int id);
 };
