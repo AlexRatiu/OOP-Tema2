@@ -15,11 +15,11 @@ public:
     Caine(const std::string &specie, const std::string &nume, const std::string &sex, int varsta, int id, const std::string& _rasa);
     void afisare() const override;
     Caine();
-
+/*
     [[nodiscard]] const std::string &getRasa() const;
 
     void setRasa(const std::string &_rasa);
-
+*/
     friend std::ostream &operator<<(std::ostream &os, const Caine &caine);
 
     ~Caine()override;

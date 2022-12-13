@@ -22,6 +22,7 @@ public:
     Animale(const Animale& rhs);
 
     [[nodiscard]] const std::string &getSpecie() const;
+    /*
 
     [[nodiscard]] const std::string &getNume() const;
 
@@ -40,7 +41,7 @@ public:
     void setVarsta(int _varsta);
 
     void setId(int _id);
-
+*/
     friend std::ostream &operator<<(std::ostream &os, const Animale &animale);
 
     friend std::istream &operator>>(std::istream &is, Animale &animale);

@@ -23,7 +23,7 @@ void Caine::afisare() const{
     std::cout<<"Id-ul cainelui este: "<<id<<std::endl;
 
 }
-
+/*
 const std::string &Caine::getRasa() const {
     return rasa;
 
@@ -32,7 +32,7 @@ const std::string &Caine::getRasa() const {
 void Caine::setRasa(const std::string &_rasa) {
     Caine::rasa = _rasa;
 }
-
+*/
 std::ostream &operator<<(std::ostream &os, const Caine &caine) {
     os << static_cast<const Animale &>(caine) << "Rasa cainelui este: " << caine.rasa<<std::endl;
     return os;

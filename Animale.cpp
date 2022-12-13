@@ -25,7 +25,7 @@ Animale::Animale(const Animale &rhs) {
 const std::string &Animale::getSpecie() const {
     return specie;
 }
-
+/*
 const std::string &Animale::getNume() const {
     return nume;
 }
@@ -60,7 +60,7 @@ void Animale::setVarsta(int _varsta) {
 
 void Animale::setId(int _id) {
     Animale::id = _id;
-}
+}*/
 
 std::ostream &operator<<(std::ostream &os, const Animale &animale) {
     os << "Specia animalului este: " << animale.specie <<std::endl;
