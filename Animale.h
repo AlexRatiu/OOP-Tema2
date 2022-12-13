@@ -12,8 +12,8 @@ protected:
     std::string specie;
     std::string nume;
     std::string sex;
-    int varsta{};
-    int id{};
+    int varsta;
+    int id;
 public:
     Animale(std::string specie, std::string nume, std::string sex, int varsta, int id);
 

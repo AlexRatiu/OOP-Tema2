@@ -47,7 +47,10 @@ int main() {
                 break;
             }
             case 3 : {
-                ALEX4ALL->sterge_animal(4);
+                std::cout<<"Care este id-ul animalului?"<<std::endl;
+                int i;
+                std::cin>>i;
+                ALEX4ALL->sterge_animal(i);
                 break;
             }
             case 4 : {
